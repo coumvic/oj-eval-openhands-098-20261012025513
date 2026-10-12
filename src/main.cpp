@@ -33,6 +33,9 @@ public:
     }
 };
 
+// Helper function to insert a value into BST
+void insertIntoBST(TreeNode*& root, int val);
+
 // Function to build BST from level order traversal values
 TreeNode* buildTree(const std::vector<int>& values) {
     if (values.empty()) return nullptr;
@@ -40,7 +43,7 @@ TreeNode* buildTree(const std::vector<int>& values) {
     TreeNode* root = new TreeNode(values[0]);
     
     // For each subsequent value, insert it into the BST
-    for (int i = 1; i < values.size(); i++) {
+    for (size_t i = 1; i < values.size(); i++) {
         insertIntoBST(root, values[i]);
     }
     
